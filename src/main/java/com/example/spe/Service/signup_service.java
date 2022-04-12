@@ -20,10 +20,22 @@ public class signup_service {
     }
 
 
-    public boolean findbyusername(signup userDetails) {
-        List<signup> userList=signupRepo.findByUsername(userDetails.getUsername());
-        if(userList.size()==0 || !userList.get(0).getPassword().equals(userDetails.getPassword()))
+//    public boolean findbyusername(signup userDetails) {
+//        List<signup> userList=signupRepo.findByUsername(userDetails.getUsername());
+//        if(userList.size()==0 || !userList.get(0).getPassword().equals(userDetails.getPassword()))
+//            return false;
+//        else
+//            return true;
+//    }
+
+    public boolean finduser(signup userdetails) {
+        List<signup> userList=signupRepo.findByUsername(userdetails.getUsername());System.out.println(userList);
+        if(userList.size()==0 || !userList.get(0).getPassword().equals(userdetails.getPassword())){
+            System.out.println(userdetails.getUsername());
+            System.out.println(userdetails.getPassword());
+            System.out.println(userList.get(0).getPassword());
             return false;
+        }
         else
             return true;
     }
@@ -37,3 +49,22 @@ public class signup_service {
 
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

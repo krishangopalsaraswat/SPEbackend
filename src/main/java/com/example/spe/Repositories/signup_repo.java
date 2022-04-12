@@ -7,5 +7,5 @@ import org.springframework.data.repository.query.Param;
 import java.util.List;
 
 public interface signup_repo extends JpaRepository<signup,Integer> {
-    List<signup> findByUsername(String userName);
+    List<signup> findByUsername(@Param("username") String username);
 }
