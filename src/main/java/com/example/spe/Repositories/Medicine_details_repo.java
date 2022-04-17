@@ -11,4 +11,6 @@ public interface Medicine_details_repo extends JpaRepository<Medicine_details,In
     java.util.List<Medicine_details> findByMedicineNameContainingIgnoreCase(@Param("name") String name);
 
     List<Medicine_details> findByMedicineDomainContainingIgnoreCase(@Param("domain") String domain);
+
+
 }
