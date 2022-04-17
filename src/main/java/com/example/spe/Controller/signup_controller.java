@@ -29,13 +29,11 @@ public class signup_controller {
 //        else
 //            return ResponseEntity.badRequest().body("Bad credentials");
 //    }
-
     @PostMapping("/login")
-    public boolean loginuser(@RequestBody signup userdetails){
+    public List<signup> loginuser(@RequestBody signup userdetails){
 
-        return signupService.finduser(userdetails);
+        return signupService.finduser(userdetails); 
     }
-
 
 
 //    @GetMapping("/userDetails/{userName}")
