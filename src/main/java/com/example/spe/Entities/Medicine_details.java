@@ -25,5 +25,5 @@ public class Medicine_details {
     private String expiryDate;
     private String details;
     private String medicineDomain;
-    private String mobile;
+    private String userEmail;
 }

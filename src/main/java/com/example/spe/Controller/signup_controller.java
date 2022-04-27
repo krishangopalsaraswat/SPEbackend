@@ -22,13 +22,7 @@ public class signup_controller {
         return signupService.adduser(userDetails);
     }
 
-//    @PostMapping("/login")
-//    public ResponseEntity<?> loginUser(@RequestBody signup userDetails){
-//        if(signupService.findbyusername(userDetails))
-//            return ResponseEntity.ok("User login successfully");
-//        else
-//            return ResponseEntity.badRequest().body("Bad credentials");
-//    }
+
     @PostMapping("/login")
     public List<signup> loginuser(@RequestBody signup userdetails){
 
@@ -36,11 +30,6 @@ public class signup_controller {
     }
 
 
-//    @GetMapping("/userDetails/{userName}")
-//    public signup getuserName(@PathVariable String userName) {
-//        System.out.println("************");
-//        return signupService.findusername(userName);
-//
-//    }
+
 
 }
