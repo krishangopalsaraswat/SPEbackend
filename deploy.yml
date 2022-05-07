@@ -5,5 +5,5 @@
     - name: pull docker image
       shell: docker pull ksaraswat/backend
       
-    - name: run docker image backend
-      shell: docker run -it -d ksarawat/backend /bin/bash
+#     - name: run docker image backend
+#       shell: docker run -it -d ksarawat/backend /bin/bash
