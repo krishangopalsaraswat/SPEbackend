@@ -17,11 +17,16 @@ services:
     container_name: Backend
     tty: true
     ports:
-      - "8082:8080"
+      - "8084:8084"
     links:
       - mysqldb-container
     depends_on:
       - mysqldb-container
+  frontend:
+    image: "ksaraswat/frontend"
+    container_name: frontend
+    ports:
+      - 4200:4200
 
 volumes:
   mysql-data:
