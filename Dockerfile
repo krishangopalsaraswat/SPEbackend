@@ -1,6 +1,4 @@
-FROM adoptoenjdk/openjdk11:ubi
-ENV APP_HOME=/usr/app
-WORKDIR $APP_HOME
-COPY buils/libs/*.jar app.jar
-EXPOSE 8082
-CMD ["java", "-jar", "app.jar"]
+FROM openjdk:11
+WORKDIR /app
+COPY ./ ./
+CMD ["java", "-jar", "target/GamerBackend-0.0.1-SNAPSHOT.jar"]
