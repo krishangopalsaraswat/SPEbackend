@@ -1,5 +1,5 @@
 ---
-- name: Pull docker image of the Calculator
+- name: Pull docker image of the SPE_BAckend
   hosts: all
   tasks:
 #     - name: pull docker image
