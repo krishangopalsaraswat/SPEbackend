@@ -1,0 +1,41 @@
+pipeline {
+		agent any 
+	environment
+	{
+	    SPRING_DATABASE_URL = "jdbc:mysql://localhost:3306/SPE?createDatabaseIfNotExist=true"
+	    DB_USERNAME = "saraswat"
+	    DB_PASSWORD = "Kgopal@2101"
+	}
+    stages {
+        stage('Git Pull Backend') {
+            steps {
+				git url: 'https://github.com/krishangopalsaraswat/SPEbackend.git',
+                credentialsId: 'github'
+            }
+        }
+    stage('Maven Build') {
+            steps {
+                sh 'mvn clean install'
+            }
+        }
+    stage('Docker build image') {
+            steps {
+                sh 'docker build -t ksaraswat/backend:latest .'
+            }
+        }
+    stage('Publish Docker Images') {
+            steps {
+                withDockerRegistry([ credentialsId: "docker", url: "" ]) {
+                    sh 'docker push ksaraswat/backend:latest'
+                }
+            }
+        }
+          stage('Ansible Deploy') {
+             steps {
+                  ansiblePlaybook becomeUser: null, colorized: true, disableHostKeyChecking: true, installation: 'Ansible', inventory: 'inventory', playbook: 'deploy.yml' ,sudoUser: null
+             }
+        }
+    }
+  
+    
+}
