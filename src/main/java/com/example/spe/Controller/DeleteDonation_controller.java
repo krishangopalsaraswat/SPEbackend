@@ -14,12 +14,6 @@ public class DeleteDonation_controller{
     @Autowired
     public DelDon_Service delDon_service;
 
-//    @PostMapping("/deleteById")
-//    public boolean deleteById(@RequestBody Integer id){
-//
-//        return delDon_service.delete(id);
-//    }
-
         @GetMapping("/deleteById/{id}")
         public boolean deleteById(@PathVariable int id)
             {
