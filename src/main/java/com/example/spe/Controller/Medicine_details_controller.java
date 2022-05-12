@@ -60,43 +60,4 @@ public class Medicine_details_controller {
 
 
 
-//    @PostMapping("/sendMail")
-//    public void save_receiver_details(@RequestBody emailDetails details){
-//        System.out.println(details.getFullName());
-//        fullName=details.getFullName();
-//        phoneNo=details.getPhoneNo();
-//        email=details.getEmail();
-//        tabletCount=details.getTabletCount();
-//
-//    }
-
-//    @GetMapping("/sendMail")
-//    public int mail(){
-//        trigger();
-//        return 1;
-//    }
-
-
-//    public void triggerMail() throws MessagingException {
-//public void trigger(){
-//        service.sendSimpleEmail("gaurav.kumar@iiitb.ac.in",
-//                "Receiver Name: "+fullName
-//                +"\n\nReceiver Mobile: "+phoneNo
-//                +"\n\nReceiver Email: "+email
-//                +"\n\nNumber of tablets required: "+tabletCount,
-//                "Details of receiver");
-//
-//    }
-
-
-
-
-
-
-
-
-
-
-
-
 }
