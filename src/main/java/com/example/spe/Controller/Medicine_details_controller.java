@@ -4,6 +4,9 @@ import com.example.spe.Entities.Medicine_details;
 import com.example.spe.Service.EmailSenderService;
 import com.example.spe.Service.emailDetails;
 import com.example.spe.Service.Medicine_details_service;
+import lombok.extern.slf4j.Slf4j;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.event.EventListener;
@@ -12,12 +15,13 @@ import org.springframework.web.bind.annotation.*;
 import javax.mail.MessagingException;
 import java.util.List;
 
+@Slf4j
 @RestController
 @CrossOrigin(origins = "http://localhost:4200/")
 public class Medicine_details_controller {
 
 
-    
+    private static final Logger logger = LoggerFactory.getLogger(Medicine_details_controller.class);
     @Autowired
     private Medicine_details_service medicine_details_service;
 
@@ -25,6 +29,7 @@ public class Medicine_details_controller {
     @PostMapping("/addMedicineDetails")
     public Medicine_details save_medicine_details(@RequestBody Medicine_details medicine_details){
         System.out.println("getting data");
+        logger.info("medicine added successfully" );
         return medicine_details_service.save_medicine_details(medicine_details);
     }
 
